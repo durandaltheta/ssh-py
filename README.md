@@ -11,7 +11,7 @@ ssh-py3 [hostname]
 
 usage: ssh.py [-h] [-p PORT] [-u USERNAME] [-pa PASSWORD] hostname
 
-Process SSH client arguments
+Minimal Python SSH client arguments
 
 positional arguments:
 
