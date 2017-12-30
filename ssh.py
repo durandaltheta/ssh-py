@@ -115,16 +115,23 @@ def setup_connection(args):
             sshClient.connect(hostname, port=port, username=username, password=password, passphrase=keyPass)  
 
 
-        shell = sshClient.invoke_shell()
-        shell.setblocking(0)
+        if args.command:
+            stdin, stdout, stderr = sshClient.exec_command(args.command) 
 
-        stdout_thread = threading.Thread(target=output_thread, args=(0,shell))
-        stderr_thread = threading.Thread(target=output_thread, args=(1,shell))
-        
-        stdout_thread.start()
-        stderr_thread.start()
+            sys.stdout.write(stdout.read())
+            sys.stderr.write(stderr.read())
 
-        input_loop(shell)
+        if not args.no_shell:
+            shell = sshClient.invoke_shell()
+            shell.setblocking(0)
+
+            stdout_thread = threading.Thread(target=output_thread, args=(0,shell))
+            stderr_thread = threading.Thread(target=output_thread, args=(1,shell))
+            
+            stdout_thread.start()
+            stderr_thread.start()
+
+            input_loop(shell)
     except Exception, e:
         print e
         os._exit(0)
@@ -137,6 +144,8 @@ if __name__ == "__main__":
     parser.add_argument('-u', '--username', type=str, help='Username used to login to remote SSH server')
     parser.add_argument('-pa', '--password', type=str, help='Password corresponding to provided username')
     parser.add_argument('-kpa', '--key-passphrase', type=str, help='Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the password')
+    parser.add_argument('-c', '--command', type=str, help='Execute provided string as a command over remote connection')
+    parser.add_argument('-ns', '--no-shell', action='store_true', help='Specify that no user shell is to be started')
      
     args = parser.parse_args()
 

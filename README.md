@@ -47,3 +47,6 @@ optional arguments:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the password
 
+&nbsp;&nbsp;&nbsp;&nbsp;-ns, --no-shell 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specify that no user shell is to be started
