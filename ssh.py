@@ -125,8 +125,7 @@ def setup_connection(args):
         print e
         os._exit(0)
 
-
-if __name__ == "__main__":
+def parse_args():
     parser = argparse.ArgumentParser(description='Minimal Python SSH client arguments (passkeys are automatically imported)')
     parser.add_argument('hostname', type=str, help='Remote SSH server\'s http or ip hostname')
     parser.add_argument('-p', '--port', type=int, help='Remote SSH server\'s port')
@@ -144,3 +143,6 @@ if __name__ == "__main__":
         sys.exit()
 
     setup_connection(args)
+
+if __name__ == "__main__":
+    parse_args()

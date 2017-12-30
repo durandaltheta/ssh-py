@@ -125,14 +125,13 @@ def setup_connection(args):
         print(e)
         os._exit(0)
 
-
-if __name__ == "__main__":
+def parse_args():
     parser = argparse.ArgumentParser(description='Minimal Python SSH client arguments (passkeys are automatically imported)')
     parser.add_argument('hostname', type=str, help='Remote SSH server\'s http or ip hostname')
     parser.add_argument('-p', '--port', type=int, help='Remote SSH server\'s port')
     parser.add_argument('-u', '--username', type=str, help='Username used to login to remote SSH server')
     parser.add_argument('-pa', '--password', type=str, help='Password corresponding to provided username')
-    parser.add_argument('-kpa', '--key-passphrase', type=str, help='Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the passphrase when needed')
+    parser.add_argument('-kpa', '--key-passphrase', type=str, help='Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the password')
     parser.add_argument('-c', '--command', type=str, help='Execute provided string as a command over remote connection')
     parser.add_argument('-ns', '--no-shell', action='store_true', help='Specify that no user shell is to be started')
      
@@ -144,3 +143,6 @@ if __name__ == "__main__":
         sys.exit()
 
     setup_connection(args)
+
+if __name__ == "__main__":
+    parse_args()
