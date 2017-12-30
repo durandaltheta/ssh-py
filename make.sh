@@ -24,17 +24,15 @@ if hash python 2>/dev/null; then
     # compile our py files 
     python -m py_compile ssh.py 
     python -m py_compile __main__.py  
-    chmod 755 ssh.pyc
-    chmod 755 __main__.py
     mv ssh.pyc $SSH_BUILD_PATH/ssh.pyc
     mv __main__.pyc $SSH_BUILD_PATH/__main__.pyc  
 
     # copy raw py's if they ever need to be dynamically recompiled
-    cp -p ssh.py $SSH_BUILD_PATH/ssh.py
-    cp -p __main__.py $SSH_BUILD_PATH/__main__.py 
+    cp ssh.py $SSH_BUILD_PATH/ssh.py
+    cp __main__.py $SSH_BUILD_PATH/__main__.py 
 
     # copy ssh libraries
-    cp -rfp $SRC_DIR/paramiko $SSH_BUILD_PATH 
+    cp -rf $SRC_DIR/paramiko $SSH_BUILD_PATH 
 
     # assemble python archive
     cd $SSH_BUILD_PATH
@@ -48,17 +46,15 @@ if hash python3 2>/dev/null; then
 
     # compile our py files
     python3 compile-ssh3.py $SSH3_SRC_PATH
-    chmod 755 __pycache__/ssh3.cpython-35.opt-2.pyc
-    chmod 755 __pycache__/__main__3.cpython-35.opt-2.pyc
     mv __pycache__/ssh3.cpython-35.opt-2.pyc $SSH3_BUILD_PATH/ssh3.pyc
     mv __pycache__/__main__3.cpython-35.opt-2.pyc $SSH3_BUILD_PATH/__main__3.pyc  
 
     # copy raw py's if they ever need to be dynamically recompiled
-    cp -p ssh3.py $SSH3_BUILD_PATH
-    cp -p __main__3.py $SSH3_BUILD_PATH/__main__.py
+    cp ssh3.py $SSH3_BUILD_PATH
+    cp __main__3.py $SSH3_BUILD_PATH/__main__.py
 
     # copy ssh libraries
-    cp -rfp $SRC_DIR/paramiko $SSH3_BUILD_PATH 
+    cp -rf $SRC_DIR/paramiko $SSH3_BUILD_PATH 
 
     # assemble python archive
     cd $SSH3_BUILD_PATH
