@@ -4,6 +4,7 @@ import threading
 import paramiko
 import argparse
 import getpass
+import shutil
 
 class _Getch:
     """Gets a single character from standard input.  Does not echo to the
@@ -42,9 +43,16 @@ class _GetchWindows:
         return msvcrt.getch()
 
 def output_thread(id, shell):
+    size = shutil.get_terminal_size()
+    shell.resize_pty(width=size.columns,height=size.lines)
     while True:
         if shell.exit_status_ready():
             sys.exit()
+
+        curSize = shutil.get_terminal_size()
+        if size.columns is not curSize.columns and size.lines is not curSize.lines:
+            size = curSize
+            shell.resize_pty(width=size.columns,height=size.lines) 
 
         if id is 0:
             output = shell.recv(256).decode('utf-8')
