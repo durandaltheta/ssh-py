@@ -21,7 +21,7 @@ ssh.py and ssh3.py can be compiled into self-contained, bytecode archives using 
 
 <br />
 <br />
-At a minimum ssh.py and ssh3.py can be invoked like any other python script, 
+At a minimum ssh.py and ssh3.py can be invoked (from within the src/ directory) like any other python script, 
 a la:<br />python ssh.py [args] 
 
 OR:<br />python3 ssh3.py [args]
