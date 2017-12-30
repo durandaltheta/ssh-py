@@ -5,16 +5,19 @@ if [[ $EUID > 0 ]]; then # we can compare directly with this syntax.
     exit 1
 else
     SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    mkdir -p /usr/local/bin 
+    INSTALL_DIR=/usr/local/bin
+    mkdir -p $INSTALL_DIR 
 
     # build self contained archives
     $SCRIPT_DIR/make.sh
 
     # copy files
-    cp $SCRIPT_DIR/src/ssh-py /usr/local/bin 
-    cp $SCRIPT_DIR/build/pyssh /usr/local/bin 
-    cp $SCRIPT_DIR/src/ssh-py3 /usr/local/bin 
-    cp $SCRIPT_DIR/build/pyssh3 /usr/local/bin 
+    cp $SCRIPT_DIR/build/ssh-py $INSTALL_DIR 
+    cp $SCRIPT_DIR/src/pyssh $INSTALL_DIR 
+    chmod +x $INSTALL_DIR/pyssh
+    cp $SCRIPT_DIR/build/ssh3-py $INSTALL_DIR 
+    cp $SCRIPT_DIR/src/pyssh3 $INSTALL_DIR 
+    chmod +x $INSTALL_DIR/pyssh3
 
     # clean directories
     $SCRIPT_DIR/clean.sh
