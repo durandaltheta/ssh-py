@@ -1,11 +1,9 @@
 #!/bin/bash 
 
-# This script builds executable archive files (almost as good as a binary created using a REAL
-# LINKER /s). These files (build/ssh and build/ssh3) still have to be executed via a call
-# to the python interpreter (a la: python ssh3), but they are completely self contained and 
-# usable standalone on other computers that use the same processor family (ie: compile on an intel,
-# it should run on a different intel). Also, should theoretically run faster because, well, it's 
-# bytecode instead of raw text.
+# compiles ssh.py and ssh3.py in self contained archives of python bytecode. Not technically
+# a real binary file because it is not assembled via a linker, it is self contained and 
+# portable. They must still be executed via the python (for ssh) or python3 (for ssh3) 
+# commands respectively
 
 CUR_DIR=$PWD
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
