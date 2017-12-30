@@ -43,3 +43,7 @@ optional arguments:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password corresponding to provided username
 
+&nbsp;&nbsp;&nbsp;&nbsp;-kpa KEY_PASSPHRASE, --key-passphrase KEY_PASSPHRASE
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the password
+
