@@ -1,7 +1,6 @@
 import os
 import sys
 import threading
-import time
 import paramiko
 import argparse
 import getpass
@@ -48,19 +47,13 @@ def output_thread(id, shell):
             sys.exit()
 
         if id is 0:
-            if shell.recv_ready():
-                output = shell.recv(256).decode('utf-8')
-                sys.stdout.write(output)
-                sys.stdout.flush()
-            else:
-                time.sleep(0.01)
+            output = shell.recv(256).decode('utf-8')
+            sys.stdout.write(output)
+            sys.stdout.flush()
         else:
-            if shell.recv_stderr_ready():
-                output = shell.recv_stderr(256).decode('utf-8')
-                sys.stderr.write(output)
-                sys.stderr.flush()
-            else:
-                time.sleep(0.01)
+            output = shell.recv_stderr(256).decode('utf-8')
+            sys.stderr.write(output)
+            sys.stderr.flush()
 
 def input_loop(shell):
     getch = _Getch()
@@ -71,9 +64,6 @@ def input_loop(shell):
 
             if shell.exit_status_ready():
                 sys.exit()
-
-            while not shell.send_ready():
-                time.sleep(0.01)
 
             shell.send(char)
     except Exception as e:
@@ -123,7 +113,6 @@ def setup_connection(args):
 
         if not args.no_shell:
             shell = sshClient.invoke_shell()
-            shell.setblocking(0)
 
             stdout_thread = threading.Thread(target=output_thread, args=(0,shell))
             stderr_thread = threading.Thread(target=output_thread, args=(1,shell))
