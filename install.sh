@@ -8,9 +8,9 @@ else
     mkdir -p /usr/local/bin 
 
     # copy files
-    cp $SCRIPT_DIR/ssh-py /usr/local/bin 
-    cp $SCRIPT_DIR/ssh.py /usr/local/bin 
-    cp $SCRIPT_DIR/ssh-py3 /usr/local/bin 
-    cp $SCRIPT_DIR/ssh3.py /usr/local/bin 
-    cp -r $SCRIPT_DIR/paramiko /usr/local/bin
+    cp $SCRIPT_DIR/src/ssh-py /usr/local/bin 
+    cp $SCRIPT_DIR/src/ssh.py /usr/local/bin 
+    cp $SCRIPT_DIR/src/ssh-py3 /usr/local/bin 
+    cp $SCRIPT_DIR/src/ssh3.py /usr/local/bin 
+    cp -r $SCRIPT_DIR/src/paramiko /usr/local/bin
 fi
