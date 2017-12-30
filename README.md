@@ -14,13 +14,24 @@ usage: ssh.py [-h] [-p PORT] [-u USERNAME] [-pa PASSWORD] hostname
 Process SSH client arguments
 
 positional arguments:
-  hostname              Remote SSH server's http or ip hostname
+
+&nbsp;&nbsp;&nbsp;&nbsp;hostname&nbsp;&nbsp;&nbsp;&nbsp;Remote SSH server's http or ip hostname
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -p PORT, --port PORT  Remote SSH server's port
-  -u USERNAME, --username USERNAME
-                        Username used to login to remote SSH server
-  -pa PASSWORD, --password PASSWORD
-                        Password corresponding to provided username
+
+&nbsp;&nbsp;&nbsp;&nbsp;-h, --help 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show this help message and exit 
+
+&nbsp;&nbsp;&nbsp;&nbsp;-p PORT, --port PORT 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remote SSH server's port 
+
+&nbsp;&nbsp;&nbsp;&nbsp;-u USERNAME, --username USERNAME 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username used to login to remote SSH server 
+
+&nbsp;&nbsp;&nbsp;&nbsp;-pa PASSWORD, --password PASSWORD 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password corresponding to provided username
 
