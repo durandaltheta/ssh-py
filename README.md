@@ -11,7 +11,7 @@ pyssh3 [hostname]
 <br />
 <br />
 Additionally, if running in a non-bash environment (CMD, PowerShell, etc), 
-ssh-py and ssh-py3 convenience scripts won't work. You will need to create
+pyssh and pyssh3 convenience scripts won't work. You will need to create
 a script that will function in your environment (a simple .bat file will 
 function in any Windows environment while running as administrator).
 
