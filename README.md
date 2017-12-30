@@ -17,6 +17,10 @@ function in any Windows environment while running as administrator).
 
 <br />
 <br />
+ssh.py and ssh3.py can be compiled into self-contained, bytecode archives. While not a fully linked binary, and have to be executed using the python command, they are completely self contained and can be literally copied from machine to another as a standalone file. They still must be run using the "python" command
+
+<br />
+<br />
 At a minimum ssh.py and ssh3.py can be invoked like any other python script, 
 a la:<br />python ssh-py [args] 
 
