@@ -22,9 +22,9 @@ ssh.py and ssh3.py can be compiled into self-contained, bytecode archives using 
 <br />
 <br />
 At a minimum ssh.py and ssh3.py can be invoked like any other python script, 
-a la:<br />python ssh-py [args] 
+a la:<br />python ssh.py [args] 
 
-OR:<br />python3 ssh-py3 [args]
+OR:<br />python3 ssh3.py [args]
 
 <br />
 usage: ssh.py [-h] [-p PORT] [-u USERNAME] [-pa PASSWORD] [-kpa KEY_PASSPHRASE] [-c COMMAND] [-ns] hostname
