@@ -17,7 +17,8 @@ a la:<br />python ssh-py [args]
 OR:<br />python3 ssh-py3 [args]
 
 <br />
-usage: ssh.py [-h] [-p PORT] [-u USERNAME] [-pa PASSWORD] hostname
+usage: ssh.py [-h] [-p PORT] [-u USERNAME] [-pa PASSWORD] [-kpa KEY_PASSPHRASE] [-c COMMAND] [-ns] hostname
+
 
 Minimal Python SSH client arguments (passkeys are automatically imported)
 
