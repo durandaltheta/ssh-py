@@ -8,22 +8,28 @@
 CUR_DIR=$PWD
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SRC_DIR=$SCRIPT_DIR/src
-SSH_BUILD_PATH=$SCRIPT_DIR/build/ssh-files
-SSH3_BUILD_PATH=$SCRIPT_DIR/build/ssh3-files
+SSH_SRC_PATH=$SRC_DIR/ssh
+SSH3_SRC_PATH=$SRC_DIR/ssh3
+SSH_BUILD_PATH=$SSH_SRC_PATH/build
+SSH3_BUILD_PATH=$SSH3_SRC_PATH/build 
+OUTPUT_PATH=$SCRIPT_DIR/build
 mkdir -p $SSH_BUILD_PATH
 mkdir -p $SSH3_BUILD_PATH
+mkdir -p $OUTPUT_PATH
 
 # compile for python2.7 if present
 if hash python 2>/dev/null; then
-    # compile our py files
-    python -m py_compile $SRC_DIR/ssh.py 
-    python -m py_compile $SRC_DIR/__main__.py  
-    mv $SRC_DIR/ssh.pyc $SSH_BUILD_PATH/ssh.pyc
-    mv $SRC_DIR/__main__.pyc $SSH_BUILD_PATH/__main__.pyc  
+    cd $SSH_SRC_PATH 
+
+    # compile our py files 
+    python -m py_compile ssh.py 
+    python -m py_compile __main__.py  
+    mv ssh.pyc $SSH_BUILD_PATH/ssh.pyc
+    mv __main__.pyc $SSH_BUILD_PATH/__main__.pyc  
 
     # copy raw py's if they ever need to be dynamically recompiled
-    cp $SRC_DIR/ssh.py $SSH_BUILD_PATH/ssh.py
-    cp $SRC_DIR/__main__.py $SSH_BUILD_PATH/__main__.py 
+    cp ssh.py $SSH_BUILD_PATH/ssh.py
+    cp __main__.py $SSH_BUILD_PATH/__main__.py 
 
     # copy ssh libraries
     cp -rf $SRC_DIR/paramiko $SSH_BUILD_PATH 
@@ -31,19 +37,21 @@ if hash python 2>/dev/null; then
     # assemble python archive
     cd $SSH_BUILD_PATH
     zip -rq ssh *
-    mv $SSH_BUILD_PATH/ssh.zip $SCRIPT_DIR/build/ssh-py
+    mv ssh.zip $OUTPUT_PATH/ssh-py
 fi
 
 # compile for python3 if present
 if hash python3 2>/dev/null; then
+    cd $SSH3_SRC_PATH 
+
     # compile our py files
-    python3 $SRC_DIR/compile-ssh3.py $SRC_DIR 
-    mv $SRC_DIR/__pycache__/ssh3.cpython-35.opt-2.pyc $SSH3_BUILD_PATH/ssh3.pyc
-    mv $SRC_DIR/__pycache__/__main__3.cpython-35.opt-2.pyc $SSH3_BUILD_PATH/__main__3.pyc  
+    python3 compile-ssh3.py $SSH3_SRC_PATH
+    mv __pycache__/ssh3.cpython-35.opt-2.pyc $SSH3_BUILD_PATH/ssh3.pyc
+    mv __pycache__/__main__3.cpython-35.opt-2.pyc $SSH3_BUILD_PATH/__main__3.pyc  
 
     # copy raw py's if they ever need to be dynamically recompiled
-    cp $SRC_DIR/ssh3.py $SSH3_BUILD_PATH
-    cp $SRC_DIR/__main__3.py $SSH3_BUILD_PATH/__main__.py
+    cp ssh3.py $SSH3_BUILD_PATH
+    cp __main__3.py $SSH3_BUILD_PATH/__main__.py
 
     # copy ssh libraries
     cp -rf $SRC_DIR/paramiko $SSH3_BUILD_PATH 
@@ -51,7 +59,7 @@ if hash python3 2>/dev/null; then
     # assemble python archive
     cd $SSH3_BUILD_PATH
     zip -rq ssh3 *
-    mv $SSH3_BUILD_PATH/ssh3.zip $SCRIPT_DIR/build/ssh3-py
+    mv ssh3.zip $OUTPUT_PATH/ssh3-py
 fi 
 
 cd $CUR_DIR
