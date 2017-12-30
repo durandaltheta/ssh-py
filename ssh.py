@@ -107,7 +107,11 @@ def setup_connection(args):
         try:
             sshClient.connect(hostname, port=port, username=username, password=password)  
         except paramiko.ssh_exception.PasswordRequiredException:
-            keyPass = getpass.getpass(prompt='Please input password for private key: ')
+            keyPass = ""
+            if args.key_passphrase:
+                keyPass = args.key_passphrase
+            else:
+                keyPass = getpass.getpass(prompt='Please input password for private key: ')
             sshClient.connect(hostname, port=port, username=username, password=password, passphrase=keyPass)  
 
 
@@ -132,6 +136,7 @@ if __name__ == "__main__":
     parser.add_argument('-p', '--port', type=int, help='Remote SSH server\'s port')
     parser.add_argument('-u', '--username', type=str, help='Username used to login to remote SSH server')
     parser.add_argument('-pa', '--password', type=str, help='Password corresponding to provided username')
+    parser.add_argument('-kpa', '--key-passphrase', type=str, help='Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the password')
      
     args = parser.parse_args()
 
