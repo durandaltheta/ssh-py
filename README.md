@@ -1,11 +1,15 @@
 Install on a linux system with 'sudo ./install.sh'. Otherwise you will need to place contents of this repository in your PATH somewhere (google PATH environment variable for your operating system).
 
-To run via python2.7:
+To run via python2.7 in a terminal:
+
 ssh-py [hostname]
 
-To run via python3.x:
+To run via python3.x in a terminal:
+
 ssh-py3 [hostname] 
 
+<br />
+<br />
 Additionally, if running in a non-bash environment (CMD, PowerShell, etc), 
 ssh-py and ssh-py3 convenience scripts won't work. You will need to create
 a script that will function in your environment (a simple .bat file will 
