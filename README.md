@@ -1,4 +1,4 @@
-Install on a linux system with 'sudo ./install.sh'. Otherwise you will need to place contents of this repository in your PATH somewhere (google PATH environment variable for your operating system)
+Install on a linux system with 'sudo ./install.sh'. Otherwise you will need to place contents of this repository in your PATH somewhere (google PATH environment variable for your operating system).
 
 To run via python2.7:
 ssh-py [hostname]
