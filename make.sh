@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-# compiles ssh.py and ssh3.py in self contained archives of python bytecode, respetively
+# compiles ssh.py and ssh3.py in self contained archives of python bytecode, respectively
 # ssh-py and ssh3-py. Not technically a real binary file because it is not assembled via 
 # a linker, it is self contained and portable. They must still be executed via the python 
 # (for ssh-py) or python3 (for ssh3-py) commands respectively.
