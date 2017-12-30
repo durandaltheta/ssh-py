@@ -132,7 +132,7 @@ if __name__ == "__main__":
     parser.add_argument('-p', '--port', type=int, help='Remote SSH server\'s port')
     parser.add_argument('-u', '--username', type=str, help='Username used to login to remote SSH server')
     parser.add_argument('-pa', '--password', type=str, help='Password corresponding to provided username')
-    parser.add_argument('-kpa', '--key-passphrase', type=str, help='Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the password')
+    parser.add_argument('-kpa', '--key-passphrase', type=str, help='Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the passphrase when needed')
     parser.add_argument('-c', '--command', type=str, help='Execute provided string as a command over remote connection')
     parser.add_argument('-ns', '--no-shell', action='store_true', help='Specify that no user shell is to be started')
      

@@ -56,7 +56,7 @@ optional arguments:
 
 &nbsp;&nbsp;&nbsp;&nbsp;-kpa KEY_PASSPHRASE, --key-passphrase KEY_PASSPHRASE
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the password
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the passphrase when needed
 
 &nbsp;&nbsp;&nbsp;&nbsp;-c COMMAND, --command COMMAND
 
