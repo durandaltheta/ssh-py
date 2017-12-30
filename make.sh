@@ -31,7 +31,7 @@ if hash python 2>/dev/null; then
     # assemble python archive
     cd $SSH_BUILD_PATH
     zip -rq ssh *
-    mv $SSH_BUILD_PATH/ssh.zip $SCRIPT_DIR/build/ssh
+    mv $SSH_BUILD_PATH/ssh.zip $SCRIPT_DIR/build/pyssh
 fi
 
 # compile for python3 if present
@@ -51,7 +51,7 @@ if hash python3 2>/dev/null; then
     # assemble python archive
     cd $SSH3_BUILD_PATH
     zip -rq ssh3 *
-    mv $SSH3_BUILD_PATH/ssh3.zip $SCRIPT_DIR/build/ssh3
+    mv $SSH3_BUILD_PATH/ssh3.zip $SCRIPT_DIR/build/pyssh3
 fi 
 
 cd $CUR_DIR

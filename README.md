@@ -17,7 +17,7 @@ function in any Windows environment while running as administrator).
 
 <br />
 <br />
-ssh.py and ssh3.py can be compiled into self-contained, bytecode archives using the 'make.sh' bash script ('clean.sh' removes all build files). While not a fully linked binaries, and have to be executed using the python command, they are completely self contained and can be literally copied from machine to another as a standalone file. These python executable archives are named simply 'ssh' and 'ssh3' in the generated 'build/' directory after running 'make.sh'.
+ssh.py and ssh3.py can be compiled into self-contained, bytecode archives using the 'make.sh' bash script ('clean.sh' removes all build files). While not a fully linked binaries, and have to be executed using the python command, they are completely self contained and can be literally copied from machine to another as a standalone file. These python executable archives are named 'pyssh' and 'pyssh3' in the generated 'build/' directory after running 'make.sh'.
 
 <br />
 <br />
