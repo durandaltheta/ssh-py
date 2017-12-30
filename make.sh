@@ -1,9 +1,9 @@
 #!/bin/bash 
 
-# compiles ssh.py and ssh3.py in self contained archives of python bytecode. Not technically
-# a real binary file because it is not assembled via a linker, it is self contained and 
-# portable. They must still be executed via the python (for ssh) or python3 (for ssh3) 
-# commands respectively
+# compiles ssh.py and ssh3.py in self contained archives of python bytecode, respetively
+# ssh-py and ssh3-py. Not technically a real binary file because it is not assembled via 
+# a linker, it is self contained and portable. They must still be executed via the python 
+# (for ssh-py) or python3 (for ssh3-py) commands respectively.
 
 CUR_DIR=$PWD
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
