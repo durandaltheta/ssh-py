@@ -14,11 +14,9 @@ a script that will function in your environment (a simple .bat file will
 function in any Windows environment while running as administrator).
 
 At a minimum ssh.py and ssh3.py can be invoked like any other python script, 
-a la:
-python ssh-py [args] 
+a la:<br />python ssh-py [args] 
 
-OR:
-python3 ssh-py3 [args]
+OR:<br />python3 ssh-py3 [args]
 
 <br />
 usage: ssh.py [-h] [-p PORT] [-u USERNAME] [-pa PASSWORD] hostname
