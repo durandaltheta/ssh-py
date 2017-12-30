@@ -143,11 +143,11 @@ def output_thread(id, shell):
             shell.resize_pty(width=size[0],height=size[1]) 
 
         if id is 0:
-            output = shell.recv(256)
+            output = shell.recv(2048)
             sys.stdout.write(output)
             sys.stdout.flush()
         else:
-            output = shell.recv_stderr(256)
+            output = shell.recv_stderr(2048)
             sys.stderr.write(output)
             sys.stderr.flush()
 
