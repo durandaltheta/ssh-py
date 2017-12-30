@@ -127,7 +127,7 @@ def setup_connection(args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Process SSH client arguments')
+    parser = argparse.ArgumentParser(description='Minimal Python SSH client arguments')
     parser.add_argument('hostname', type=str, help='Remote SSH server\'s http or ip hostname')
     parser.add_argument('-p', '--port', type=int, help='Remote SSH server\'s port')
     parser.add_argument('-u', '--username', type=str, help='Username used to login to remote SSH server')
