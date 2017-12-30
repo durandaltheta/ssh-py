@@ -47,6 +47,10 @@ optional arguments:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passphrase for SSH passkey. If needed and not provided, user will be prompted to enter the password
 
+&nbsp;&nbsp;&nbsp;&nbsp;-c COMMAND, --command COMMAND
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Execute provided string as a command over remote connection
+
 &nbsp;&nbsp;&nbsp;&nbsp;-ns, --no-shell 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specify that no user shell is to be started
